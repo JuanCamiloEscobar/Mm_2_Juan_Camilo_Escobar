@@ -73,10 +73,10 @@ public function eliminarDatos($consultaSQL){
     $conexionBD=$this->conectarBD();
 
     //preparar la consulta que se va a realizar
-    $consultaEliminarDatos= $conexionBD->prepare($consultaSQL);
+    $eliminarDatos= $conexionBD->prepare($consultaSQL);
 
     //ejecute la consulta
-    $resultado=$consultaEliminarDatos->execute();
+    $resultado=$eliminarDatos->execute();
 
     //validar la operacion
     if ($resultado) {
@@ -85,6 +85,19 @@ public function eliminarDatos($consultaSQL){
         echo("No se elimino");
     }
     
+}
+
+public function editarDatos($consultaSQL){
+
+    //1.conectarse a la BD
+    $conexionBD=$this->conectarBD();
+
+    //preparar la consulta que se va a realizar
+    $editarDatos= $conexionBD->prepare($consultaSQL);
+
+    //ejecute la consulta
+    $resultado=$editarDatos->execute();
+
 }
 
 }

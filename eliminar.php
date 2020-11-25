@@ -3,8 +3,8 @@
 //incluir el archivo
 include("BD.php");
 
- //recibir el id
- $id=($_GET("id"));
+ //recibir el id 
+ $id= $_GET["id"];
 
  //crear objeto (sacar copia)
  $transaccion= new BD();
@@ -14,6 +14,8 @@ include("BD.php");
 
  //ejecutar el metodo
  $transaccion->eliminarDatos($consultaSQL);
+
+ header("location:helmet.php");
 
 
 ?>

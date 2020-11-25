@@ -29,7 +29,6 @@
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.php">Nosotros</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" target="_blank" href="Ventas.php">ventas</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="helmet.php">Helmet</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#">Registrar</a></li>
                     </ul>
                 
                 </div>
@@ -95,21 +94,70 @@
                <div class="row row-cols-1 row-cols-md-3">
                  <?php foreach ($productos as $producto) :?>
 
-                   <div class="col mb-4">
-                      <div class="card">
-                       <img src="" class="card-img-top" alt="...">
-                        <div class="card-body">
-                           <h3 class="card-title"><?php echo($producto["nombre"]) ?></h3>
-                           <p class="card-text"><?php echo($producto["descripcion"]) ?></p>
-                           <a class="btn btn-primary" href="eliminar.php?id<?php echo($producto["idProducto"])?>">Eliminar</a>
-                           <a name="" class="btn btn-primary" href="#">Editar</a>
+                  <div class="col mb-4">
+
+                    <div class="card">
+                       <img src="<?php echo($producto["foto"])?>" class="card-img-top" alt="foto">
+                        <div class="card-body text-center">
+                           <h3 class="text-secondary text-center"><?php echo($producto["nombre"]) ?></h3>
+                           <h5 class="text-secondary text-center">$<?php echo($producto["precio"]) ?></h5>
+                           <h6 class="text-secondary text-center"><?php echo($producto["descripcion"]) ?></h6>
+                           <a name="id" class="btn btn-dark" href="eliminar.php?id=<?php echo($producto["idProducto"]) ?>">Eliminar</a>
+                           <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#editar<?php echo($producto["idProducto"]) ?>">
+                            Editar
+                           </button>
                         </div>
                       </div>
-                   </div>
+                      <div class="modal fade" id="editar<?php echo($producto["idProducto"]) ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                  <div class="modal-content text-center text-secondary">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+
+                                        <div class="modal-body">
+
+                                           <form action="editar.php?id=<?php echo($producto["idProducto"]) ?>" method="POST">
+                                           <h3 class="text-center">Editar Producto</h3>
+                                            <div class="control-group">
+                                              <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                                  <label>Nombre</label><input class="form-control" value="<?php echo($producto["nombre"]) ?>" name="Nombre" id="" type="text" required="required" />
+                                                  <p class="help-block text-danger"></p>
+                                              </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                              <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                                  <label>Precio</label><input class="form-control" value="<?php echo($producto["precio"]) ?>" name="Precio" id="" type="text" required="required"/>
+                                                  <p class="help-block text-danger"></p>
+                                              </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                              <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                                  <label>Descripcion</label><input class="form-control" value="<?php echo($producto["descripcion"]) ?>" name="descripcion" id="" type="text" required="required" />
+                                                  <p class="help-block text-danger"></p>
+                                              </div>
+                                            </div>
+                                            <div class="modal-footer text-center"><br>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                            <button type="submit" name="editar" class="btn btn-secondary">Guardar Cambios</button>
+                                            </div>
+                                           </form>
+
+                                        </div>
+
+                                      
+                                  </div>
+                            </div>
+                          </div>
+                    </div>
 
                  <?php endforeach ?>
+               </div>
             </div>
-        </div>
    </section>
 <!-- Footer-->
 <footer class="footer text-center" id="foo">

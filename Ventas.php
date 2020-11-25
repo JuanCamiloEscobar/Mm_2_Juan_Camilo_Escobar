@@ -28,8 +28,7 @@
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.php">Galeria</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.php">Nosotros</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" target="_blank" href="Ventas.php">ventas</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="helmet.php,#admon">Helmet</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#">Registro</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="helmet.php">Helmet</a></li>
                     </ul>
                 
                 </div>
@@ -104,18 +103,22 @@
                     <div class="form-group floating-label-form-group controls mb-0 pb-2"rows="4">
                         <label>Descripcion</label><input class="form-control" name="Descripcion" rows="4" id=""  placeholder="Descripcion" required="required" data-validation-required-message="Ingrese la Descripcion."/>
                         <p id="errorvv" class="help-block text-danger">
-
+                        </p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls mb-0 pb-2"rows="4">
+                        <label>Foto</label>
+                        <input class="form-control" name="foto" rows="4" id="foto"  placeholder="URL foto" required="required" data-validation-required-message="Ingrese la foto."/>
+                        <p id="" class="help-block text-danger">
                         </p>
                     </div>
                 </div>
                 <br>
                 
-                <div class="form-group">
-                  <button class="btn btn-primary" type="reset" >Limpiar</button>
-                  <button class="btn btn-primary" type="submit" id="btnRegistrar" name="btnRegistrar" >Registrar</button>
-                  <button class="btn btn-primary" type="submit" id="btnRegistrar" name="btnRegistrar" >Buscar</button>
-                  <button class="btn btn-primary" type="submit" id="btnRegistrar" name="btnRegistrar" >Eliminar</button>
-                  <button class="btn btn-primary" type="submit" id="btnRegistrar" name="btnRegistrar" >Editar</button>
+                <div class="form-group text-center">
+                  <button class="btn btn-secondary" type="reset" >Limpiar</button>
+                  <button class="btn btn-secondary" type="submit" id="btnRegistrar" name="btnRegistrar" >Registrar</button>
                 </div>
             
             </form>
